@@ -1,45 +1,50 @@
-body {
+html, body {
   margin: 0;
-  background-color: #fff0f5; /* rosa muito claro */
+  padding: 0;
+  width: 100%;
+  background-color: #fff0f5;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #b03060;
+  overflow-x: hidden; /* evita conteúdo invisível lateral */
+}
+
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  font-family: 'Helvetica Neue', sans-serif;
-  color: #b03060; /* rosa escuro suave */
+  padding-bottom: 30px;
 }
 
 .carrossel {
-  width: 100%;
-  max-width: 100%; /* usar toda a largura da tela */
-  height: 280px; /* maior altura para as fotos */
+  width: 100vw;
+  height: 500px; /* altura vertical grande */
   overflow: hidden;
-  border-radius: 12px;
+  position: relative;
   margin-bottom: 16px;
 }
 
 .carrossel-imagens {
   display: flex;
-  width: 300%;
   height: 100%;
-  animation: slide 18s infinite; /* 6 segundos por imagem */
+  width: 300%; /* 3 imagens lado a lado */
+  animation: slide 18s infinite;
 }
 
 .carrossel-imagens img {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   object-fit: cover;
 }
 
 @keyframes slide {
-  0%   { transform: translateX(0%); }
-  33.333%  { transform: translateX(-100%); }
-  66.666%  { transform: translateX(-200%); }
-  100% { transform: translateX(0%); }
+  0% { transform: translateX(0vw); }
+  33.333% { transform: translateX(-100vw); }
+  66.666% { transform: translateX(-200vw); }
+  100% { transform: translateX(0vw); }
 }
 
 .mensagem {
-  max-width: 360px;
+  max-width: 90%;
   text-align: center;
   font-size: 1em;
   background-color: #ffe4ec;
