@@ -11,8 +11,8 @@ body {
 
 .carrossel {
   width: 100%;
-  max-width: 360px;
-  height: 240px;
+  max-width: 100%; /* usar toda a largura da tela */
+  height: 280px; /* maior altura para as fotos */
   overflow: hidden;
   border-radius: 12px;
   margin-bottom: 16px;
@@ -22,7 +22,7 @@ body {
   display: flex;
   width: 300%;
   height: 100%;
-  animation: slide 15s infinite;
+  animation: slide 18s infinite; /* 6 segundos por imagem */
 }
 
 .carrossel-imagens img {
@@ -33,8 +33,8 @@ body {
 
 @keyframes slide {
   0%   { transform: translateX(0%); }
-  33%  { transform: translateX(-100%); }
-  66%  { transform: translateX(-200%); }
+  33.333%  { transform: translateX(-100%); }
+  66.666%  { transform: translateX(-200%); }
   100% { transform: translateX(0%); }
 }
 
