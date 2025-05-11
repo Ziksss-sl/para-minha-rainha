@@ -8,11 +8,9 @@
 </head>
 <body>
   <div class="carrossel">
-    <div class="carrossel-imagens">
-      <img src="13 Sem Título_20250511120104~2.png" alt="Foto 1" />
-      <img src="14 Sem Título_20250511120343.png" alt="Foto 2" />
-      <img src="15 Sem Título_20250511120500.png" alt="Foto 3" />
-    </div>
+    <img src="13 Sem Título_20250511120104~2.png" alt="Foto 1" class="slide ativo" />
+    <img src="14 Sem Título_20250511120343.png" alt="Foto 2" class="slide" />
+    <img src="15 Sem Título_20250511120500.png" alt="Foto 3" class="slide" />
   </div>
 
   <div class="mensagem">
@@ -20,5 +18,22 @@
     <br><br>
     <span class="final">EU TE AMO MÃE ❤️</span>
   </div>
+
+  <script>
+    let slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    function mostrarSlide() {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('ativo');
+        if (i === index) {
+          slide.classList.add('ativo');
+        }
+      });
+      index = (index + 1) % slides.length;
+    }
+
+    setInterval(mostrarSlide, 3000); // Muda de imagem a cada 3 segundos
+  </script>
 </body>
 </html>
