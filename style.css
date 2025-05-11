@@ -5,7 +5,7 @@ html, body {
   background-color: #fff0f5;
   font-family: 'Helvetica Neue', sans-serif;
   color: #b03060;
-  overflow-x: hidden; /* evita conteúdo invisível lateral */
+  overflow-x: hidden;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
 
 .carrossel {
   width: 100vw;
-  height: 500px; /* altura vertical grande */
+  height: 500px; /* altura maior (vertical) */
   overflow: hidden;
   position: relative;
   margin-bottom: 16px;
@@ -26,8 +26,8 @@ body {
 .carrossel-imagens {
   display: flex;
   height: 100%;
-  width: 300%; /* 3 imagens lado a lado */
-  animation: slide 18s infinite;
+  width: 300vw;
+  animation: slide 15s infinite ease-in-out;
 }
 
 .carrossel-imagens img {
@@ -36,11 +36,12 @@ body {
   object-fit: cover;
 }
 
+/* Animação para 3 imagens, 5 segundos cada */
 @keyframes slide {
-  0% { transform: translateX(0vw); }
-  33.333% { transform: translateX(-100vw); }
-  66.666% { transform: translateX(-200vw); }
-  100% { transform: translateX(0vw); }
+  0%   { transform: translateX(0); }
+  33.33% { transform: translateX(-100vw); }
+  66.66% { transform: translateX(-200vw); }
+  100% { transform: translateX(0); }
 }
 
 .mensagem {
